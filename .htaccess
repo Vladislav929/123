@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /meubelny-salon/
+
+# Исключаем реальные файлы и директории
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# Перенаправляем все запросы на index.php
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
